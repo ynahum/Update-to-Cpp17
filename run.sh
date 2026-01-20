@@ -9,7 +9,14 @@ if [ -f "$INPUT_PATH" ]; then
     if [ -x "$INPUT_PATH" ]; then
         echo "------------------------------------------------"
         echo "Running $INPUT_PATH ..."
-        "$INPUT_PATH"
+        
+        # If path doesn't start with / or ./ or ../, prepend ./ to make it executable
+        if [[ "$INPUT_PATH" != /* && "$INPUT_PATH" != ./* && "$INPUT_PATH" != ../* ]]; then
+            ./"$INPUT_PATH"
+        else
+            "$INPUT_PATH"
+        fi
+        
         echo ""
     else
         echo "Error: '$INPUT_PATH' is a file but not executable."
