@@ -13,7 +13,7 @@ build_file() {
     local output="$dir/$filename"
     
     echo "Building $file..."
-    g++ -std="$CPP_STANDARD" -pthread -o "$output" "$file"
+    g++ -std="$CPP_STANDARD" -Wall -Wextra -pthread -o "$output" "$file"
     
     if [ $? -eq 0 ]; then
         echo "Successfully built $output"

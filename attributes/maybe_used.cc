@@ -1,4 +1,6 @@
-int func(int x) 
+#include <iostream>
+
+int func([[maybe_unused]] int x) 
 {
 #ifdef USE_X
 	return x;
@@ -9,5 +11,5 @@ int func(int x)
 
 int main() 
 {
-	func(42);
+	std::cout << func(42) << std::endl;
 }
