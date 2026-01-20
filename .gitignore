@@ -1,0 +1,21 @@
+# Ignore everything
+*
+
+# But keep directories (so we can find files inside them)
+!*/
+
+# Keep source files
+!*.cc
+!*.cpp
+!*.h
+!*.hpp
+
+# Keep documentation and config
+!README.md
+!LICENCE
+!LICENSE
+!.vscode/
+!.gitignore
+
+# Keep scripts
+!*.sh
