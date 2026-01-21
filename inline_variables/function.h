@@ -2,7 +2,7 @@
 #define FUNCTION_H
 
 // Free function defined in header
-// inline
+inline
 void func() {}
 
 // Member function defined in header
