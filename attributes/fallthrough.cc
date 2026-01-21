@@ -12,9 +12,9 @@ int main()
 		c = arr[i];
 		switch (c) {  
 		  case ' ':
-			//[[fallthrough]];              // Fall through to next case - not a mistake!
+			[[fallthrough]];              // Fall through to next case - not a mistake!
 		  case '\t':
-			//[[fallthrough]];              // Fall through to next case - not a mistake!
+			[[fallthrough]];              // Fall through to next case - not a mistake!
 		  case '\n':
 			++ws_count;            
 			break;
