@@ -11,17 +11,18 @@ struct Numbers {
 
 int main()
 {
+#if __cplusplus < 201703L
+	std::cout << "before C++17\n";	
 	Numbers numbers{1, 2.0, "three"s};
-
-	/*
-	// Before C++17
 	int i = numbers.x;
 	double d = numbers.y;
-	string s = numbers.z;
-	*/
+	std::string s = numbers.z;
+#else
+	Numbers numbers{1, 2.0, "three"s};
 
 	// C++17
 	auto [i, d, s] = numbers;
 
+#endif
 	std::cout << "i = " << i << ", d = " << d << ", s = " << s << '\n';
 }
