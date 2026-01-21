@@ -2,7 +2,6 @@
 
 int main()
 {
-	char c;
 	int ws_count{0};
 	
 	const char *arr = "How much whitespace in\t here?";
@@ -11,7 +10,9 @@ int main()
 	for (int i = 0; arr[i]; ++i) {
 		switch (const char c = arr[i]; c) {  
 		case ' ':                 // c is space character
+			[[fallthrough]];        // Continue to next case
 		case '\t':                // c is tab character
+			[[fallthrough]];        // Continue to next case
 		case '\n':                // c is newline character
 			++ws_count;           // Increment whitespace counter
 			break;        
