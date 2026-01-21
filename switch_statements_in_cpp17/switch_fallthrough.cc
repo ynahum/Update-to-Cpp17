@@ -2,7 +2,6 @@
 
 int main()
 {
-	char c;
 	int ws_count{0};
 	
 	const char *arr = "How much whitespace in\t here?";
