@@ -28,6 +28,7 @@ void convert(const std::string& str)
 }
 
 int main() {
+	convert("3.14");       // Invalid argument
 	convert("3875");       // Parsed as 3875
 	convert("387err5");    // Parsed as 387
 	convert("Oops");       // Invalid argument

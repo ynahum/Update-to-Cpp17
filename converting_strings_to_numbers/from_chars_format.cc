@@ -15,5 +15,5 @@ int main()
 	auto format = std::chars_format::general;
 	auto res = std::from_chars(str.data(), str.data() + str.size(), number, format);
 
-	std::cout << "number: " << number << '\n';
+	std::cout << "number: " << number << "\nres "	<< std::hex << res.ptr << '\n';
 }
