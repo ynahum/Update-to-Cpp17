@@ -15,6 +15,7 @@ int main()
 	sv.remove_suffix(1);
 	std::cout << "string view: " << sv << "\n";
 	//std::string str{sv.data()};   // Retains removed suffix
+	// for correct conversion to string and safety use:
 	std::string str{sv.data(), sv.size()};
 	std::cout << "string: " << str << "\n";
 }

@@ -7,6 +7,7 @@ using namespace std::literals;
 void greet(std::string_view person)
 {
     std::cout << "Hello, " << person << "\n";
+    std::cout << "person size: " << person.size() << "\n";
 }
 
 int main()
