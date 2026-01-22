@@ -5,10 +5,10 @@
 
 void test(double dbl)
 {
-	const int size{100};
+	const int size{30};
 	char buf[size];
 
-	auto res = std::to_chars(buf, buf + size, dbl);
+	auto res = std::to_chars(buf, buf + size, dbl, std::chars_format::scientific, 20);
 
 	if (res.ec == std::errc::value_too_large)
 		std::cout << "value_too_large\n";
