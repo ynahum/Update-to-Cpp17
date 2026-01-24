@@ -7,6 +7,7 @@ struct NonDefault {
 
 int main()
 {
+	
 	//std::variant<NonDefault> var;                    // Error!
 
 	// Solution: put std::monostate as the first alternative

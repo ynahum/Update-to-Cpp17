@@ -32,7 +32,7 @@ int main()
 		std::cout << std::boolalpha << var.valueless_by_exception() << "\n";
 	}
 	try {
-		std::cout << "var<0>: " << std::get<0>(var);
+		std::cout << "var<0>: " << std::get<0>(var) << '\n';
 	}
 	catch (std::exception& e) {
 		std::cout << "Caught an exception: " << e.what() << '\n';

@@ -15,7 +15,7 @@ int main() {
 		std::cout << "Int alternative is not in use\n";
 
 	// Only works with type parameters
-	// if (std::holds_alternative<1>(var))             // Error!
+	//if (std::holds_alternative<1>(var))             // Error!
 
 	auto idx = var.index();
 	std::cout << "Alternative in use has index: " << idx << '\n';

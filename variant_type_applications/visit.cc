@@ -12,10 +12,12 @@ int main() {
 	using Token = std::variant<char, int, double>;            // Alias for Token variant
 	std::vector<Token> tokens = {42, 3.14159, 'Z', 99};       // std::vector of Token variants
 
+	auto visitor = TokenVisitor{};                           // Create a TokenVisitor instance
+
 	// Iterate over the variants
 	for (auto token : tokens) {
 		// Call TokenVisitor's () operator
 		// Pass token's in-use alternative as argument
-		std::visit(TokenVisitor(), token);
+		std::visit(visitor, token);
 	}
 }
