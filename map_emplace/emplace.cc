@@ -31,6 +31,8 @@ public:
 int main()
 {
 	std::vector<refrigerator> vec;
+	// w/o the following line, vector will reallocate as needed and we will see multiple copy constructor calls
+	vec.reserve(5);
 
 	refrigerator fridge(2, false, true);                  // Create a refrigerator object
 	vec.insert(vec.begin(), fridge);                      // Add an element and copy fridge into it

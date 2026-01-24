@@ -36,7 +36,7 @@ int main()
 	refrigerator meat_fridge(2, false, true);               // Create a refrigerator object
 	fridges.insert_or_assign("Meat fridge", meat_fridge);   // Add an element and copy fridge into it
 
-	fridges.try_emplace("Dairy fridge", 5, false, false);    // Add an element and create an object in it
+	fridges.try_emplace("Meat fridge", 5, false, false);    // Add an element and create an object in it
 
 	std::cout << "Refrigerators:\n";
 	for (const auto& [name, fridge] : fridges) {
