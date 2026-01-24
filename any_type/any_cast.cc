@@ -17,7 +17,7 @@ int main()
 	try {
 		std::cout << std::any_cast<int>(a) << '\n';     // Succeeds
 		std::cout << std::any_cast<std::string>(b) << '\n';  // Succeeds
-		//std::cout << std::any_cast<int>(b) << '\n';   // Throws  bad_any_cast
+		std::cout << std::any_cast<int>(b) << '\n';   // Throws  bad_any_cast
 	}
 	catch (const std::bad_any_cast& e) {
 		std::cout << "Caught exception: " << e.what() << '\n';
