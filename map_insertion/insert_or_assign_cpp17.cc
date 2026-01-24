@@ -14,6 +14,7 @@ int main() {
 	}
 	else {
 		std::cout << "Modified the element with key " << iter->first;
+		// no need to assign as insert_or_assign did that for us
 		std::cout << " to have value " << iter->second << '\n';
 	}
 }
