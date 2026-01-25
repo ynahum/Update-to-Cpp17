@@ -4,7 +4,7 @@
 
 int main()
 {
-	std::map<std::string, int> scores = { {"Graham", 66} };    // Create an std::map object
+	std::map<std::string, int> scores{ {"Graham", 66} };    // Create an std::map object
 	
 	std::cout << "Original map\n";
 	for (auto score : scores)

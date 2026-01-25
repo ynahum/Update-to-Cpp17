@@ -4,11 +4,11 @@
 
 int main()
 {
-	std::map<std::string, int> scores = { {"Graham", 66} };   // Create an std::map object
+	std::map<std::string, int> scores{ {"Graham", 66} };   // Create an std::map object
 	
 	std::cout << "Original map\n";
-	for (auto score : scores)
-		std::cout << "Key = " << score.first << ", value = " << score.second << '\n';
+	for (auto& [k, v] : scores)
+		std::cout << "Key = " << k << ", value = " << v << '\n';
 
 	// Change key of "Graham" element
 	std::cout << "Changing key to Grace\n";
@@ -19,6 +19,6 @@ int main()
 		scores.insert(std::move(node));                       // Re-insert the element
 	}
 	
-	for (auto score : scores)
-		std::cout << "Key = " << score.first << ", value = " << score.second << '\n';
+	for (auto& [k, v] : scores)
+		std::cout << "Key = " << k << ", value = " << v << '\n';
 }
