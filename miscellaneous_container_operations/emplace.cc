@@ -21,8 +21,8 @@ int main()
 {
 	std::vector<refrigerator> vec;
 
-	refrigerator fridge(2, false, true);                  // Create a refrigerator object
-	vec.insert(vec.begin(), fridge);                      // Add an element and copy fridge into it
+	refrigerator fridge{2, false, true};                  // Create a refrigerator object
+	vec.insert(begin(vec), fridge);                      // Add an element and copy fridge into it
 
 	std::cout << "Vector elements:\n";
 	for (auto el : vec) {
@@ -30,7 +30,7 @@ int main()
 		std::cout << "\n";
 	}
 	
-	auto back = vec.emplace_back(3, false, true);    // Create new element at back
+	auto& back = vec.emplace_back(3, false, true);    // Create new element at back
 	std::cout << "\nEmplaced an element at the back of the vector: \n";
 	back.print();                                                  // Print out the new element
 

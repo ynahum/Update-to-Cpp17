@@ -19,7 +19,7 @@ int main()
 	
 	int *pvec = data(vec);                           // Get the vector's internal data as an array
 	std::cout << "Array elements: ";
-	for (int i = 0; i < size(vec); ++i)
+	for (size_t i{0}; i < size(vec); ++i)
 		std::cout << pvec[i] << ", ";
 	std::cout << "\n";
 	

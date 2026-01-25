@@ -8,7 +8,9 @@ struct Test {
 	int i;
 	double d;
 	std::string s;
-	Test(int i, double d, std::string s) : i(i), d(d), s(s) {}
+	Test(int i, double d, std::string s) : i(i), d(d), s(s) {
+		std::cout << "Constructor called\n";
+	}
 	void print() {
 		std::cout << "i = " << i << ", d = " << d << ", s = " << s << '\n';
 	}
