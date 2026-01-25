@@ -2,6 +2,7 @@
 #include <map>
 #include <string>
 
+// pre cpp 17 way of inserting or assigning
 int main() {
 	std::map<std::string, int> scores;                         // Create an std::map object
 	
