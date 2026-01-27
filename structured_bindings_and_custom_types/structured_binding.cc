@@ -6,9 +6,18 @@ using namespace std::literals;
 
 // Our custom type
 struct Test {
+private:
 	int i;
 	double d;
 	std::string s;
+public:
+	// Constructor
+	Test(int ii, double dd, const std::string& ss) : i{ii}, d{dd}, s{ss} {}
+
+	template<int Idx>
+    friend auto constexpr get(const Test& test);
+
+	
 };
 
 // Implement get<idx> for our type
@@ -21,6 +30,21 @@ auto constexpr get(const Test& test)            // Function returning "auto"
 		return test.d;
 	else if constexpr (Idx == 2)
 		return test.s;
+}
+
+// Required specializations for structured bindings
+namespace std {
+    template<>
+    struct tuple_size<Test> : std::integral_constant<std::size_t, 3> {};
+    
+    template<>
+    struct tuple_element<0, Test> { using type = int; };
+    
+    template<>
+    struct tuple_element<1, Test> { using type = double; };
+    
+    template<>
+    struct tuple_element<2, Test> { using type = std::string; };
 }
 
 Test func()  // Function that returns a Test object
