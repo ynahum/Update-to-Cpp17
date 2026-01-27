@@ -48,8 +48,11 @@ void read(int i)
         std::scoped_lock<std::mutex> pg(print_mutex);
         std::cout << "Reader thread " << i << " has shared lock" << '\n';
     }
+   	std::this_thread::sleep_for(2ms);
+
 }
 
+// run this exe with time "bash -c 'time ./shared_mutex'" to see the effect of shared mutexes
 int main() {
     std::vector<std::thread> threads;
 
