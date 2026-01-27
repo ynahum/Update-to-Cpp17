@@ -9,7 +9,7 @@ int main()
 {
 	// Create a path object
 	//fs::path test_file("D:\\test\\test.txt");
-	fs::path test_file("D:\\temp\\test.txt");
+	fs::path test_file{"test4.txt"};
 	std::cout << "test_file path is " << test_file << '\n';
 	
 	// Overload of fs::file_size which takes an error code

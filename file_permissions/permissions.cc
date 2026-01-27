@@ -35,7 +35,7 @@ void show_permissions(const fs::path& pth)
 int main()
 {
 	// Create a file to work with
-    std::string filename{"test.txt"};
+    std::string filename{"test5.txt"};
 	std::ofstream test(filename); // create file
  
     std::cout << "Created " << filename << " with permissions: ";
@@ -43,12 +43,11 @@ int main()
 	
     show_permissions(filename);
  
-    fs::permissions("test.txt", fsp::owner_write, fspo::remove);
-
+    fs::permissions("test5.txt", fsp::owner_write, fspo::remove);
     std::cout << "After removing u-w:  ";
     show_permissions(filename);
  
-	fs::permissions("test.txt",
+	fs::permissions("test5.txt",
                        fsp::owner_all | fsp::group_all,
                        fspo::add);
 
@@ -56,5 +55,5 @@ int main()
 	show_permissions(filename);
     
 	// Delete our work file
-	remove("test.txt");
+	remove("test5.txt");
 }
