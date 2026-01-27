@@ -5,6 +5,7 @@
 
 INPUT_PATH="${1:-.}"
 CPP_STANDARD="${2:-c++17}"
+GENERATE_MAP="${3:-false}"
 
 build_file() {
     local file="$1"
@@ -13,10 +14,19 @@ build_file() {
     local output="$dir/$filename"
     
     echo "Building $file..."
-    g++ -std="$CPP_STANDARD" -Wall -Wextra -pthread -o "$output" "$file"
+    local compile_cmd="g++ -std=\"$CPP_STANDARD\" -Wall -Wextra -pthread -o \"$output\" \"$file\""
+    
+    if [ "$GENERATE_MAP" = "true" ]; then
+        compile_cmd="$compile_cmd -Wl,-Map=\"$output.map\""
+    fi
+    
+    eval "$compile_cmd"
     
     if [ $? -eq 0 ]; then
         echo "Successfully built $output"
+        if [ "$GENERATE_MAP" = "true" ]; then
+            echo "Map file generated: $output.map"
+        fi
     else
         echo "Failed to build $file"
     fi
