@@ -38,7 +38,7 @@ template<typename Test>
 constexpr auto get_last(const Test& test)
 {
 	// Find the number of elements
-	constexpr auto size = std::tuple_size<Test>::value;
+	constexpr auto size = std::tuple_size_v<Test>;
 	
 	// Check there is at least one element
 	static_assert(size > 0);

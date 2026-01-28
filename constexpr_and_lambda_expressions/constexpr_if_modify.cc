@@ -1,3 +1,5 @@
+#include <iostream>
+
 int main()
 {
 	int i{1};
@@ -5,8 +7,12 @@ int main()
 	
 	[n, &i] ()  {                   // i is not a constant expression
 		++i;
-		if constexpr (n % 2 == 1)
+		if constexpr (n % 2 == 1) {
+			std::cout << "n is odd\n";			
 			return true;
-		return false;
-	};
+		} else {	
+			std::cout << "n is even\n";
+			return false;
+		}
+	}();
 }
