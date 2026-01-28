@@ -24,7 +24,7 @@ template <typename... Args>
 bool none_of(Args... args)
 {
 	return (... && !args);    // Left fold
-	// Equivalent to (!args && (!args2 && !args3))
+	// Equivalent to ((!args1 && !args2) && !args3))
 }
 
 int main()
@@ -32,5 +32,5 @@ int main()
 	std::cout << std::boolalpha;
 	std::cout << "any_of(1 == 1, 1 == 2) returns " << any_of(1 == 1, 1 == 2) << '\n';
 	std::cout << "all_of(1 == 1, 1 == 2) returns " << all_of(1 == 1, 1 == 2) << '\n';
-	std::cout << "none_of(1 == 1, 1 == 2) returns " << none_of(1 == 1, 1 == 2) << '\n';
+	std::cout << "none_of(1 == 2, 1 == 2) returns " << none_of(1 == 2, 1 == 2) << '\n';
 }
