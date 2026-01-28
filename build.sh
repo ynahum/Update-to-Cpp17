@@ -14,7 +14,7 @@ build_file() {
     local output="$dir/$filename"
     
     echo "Building $file..."
-    local compile_cmd="g++ -std=\"$CPP_STANDARD\" -Wall -Wextra -pthread -o \"$output\" \"$file\""
+    local compile_cmd="g++ -std=\"$CPP_STANDARD\" -Wall -Wextra -pthread -o \"$output\" \"$file\" -ltbb"
     
     if [ "$GENERATE_MAP" = "true" ]; then
         compile_cmd="$compile_cmd -Wl,-Map=\"$output.map\""
