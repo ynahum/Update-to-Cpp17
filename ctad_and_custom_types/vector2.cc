@@ -22,5 +22,5 @@ int main()
 	// Equivalent to new_vector<int> vec2{begin(vec), end(vec)}
 	new_vector vec2{begin(vec), end(vec)};
 	
-	//static_assert(std::is_same_v<decltype(vec2), new_vector<int>>);
+	static_assert(std::is_same_v<decltype(vec2), new_vector<int>>);
 }
