@@ -17,6 +17,6 @@ int add(int a, int b)
 
 int main()
 {
-    FunctionWrapper<decltype(add), add> wrapper;
+    FunctionWrapper<decltype(&add), &add > wrapper;
     std::cout << "FunctionWrapper<add>(1, 2) returns " << wrapper(1, 2) << '\n';
 }
