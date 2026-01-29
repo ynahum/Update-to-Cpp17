@@ -20,6 +20,7 @@ build_file() {
         compile_cmd="$compile_cmd -Wl,-Map=\"$output.map\""
     fi
     
+    echo "Command: $compile_cmd"
     eval "$compile_cmd"
     
     if [ $? -eq 0 ]; then
