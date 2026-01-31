@@ -5,7 +5,7 @@
 int main()
 {
 	std::vector vec{1, 2, 3, 4};
-	std::vector vec2(vec.size());
+	std::vector<int> vec2(vec.size());
 
 	// vec2 will contain { 1, 3, 6, 10 };
 	std::partial_sum(begin(vec), end(vec), begin(vec2));

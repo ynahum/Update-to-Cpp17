@@ -4,7 +4,7 @@
 
 int main()
 {
-	std::vector<int> vec{1, 2, 3, 4, 5, 6, 7};
+	std::vector vec{1, 2, 3, 4, 5, 6, 7};
 
 	// Sum elements using initial value 0
 	auto sum = std::accumulate(begin(vec), end(vec), 0);
